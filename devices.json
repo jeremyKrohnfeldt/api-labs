@@ -1,0 +1,23 @@
+[
+    {
+        "uid": "alpha-1",
+        "callsign": "ALPHA-1",
+        "latitude": 34.4638,
+        "longitude": -100.437,
+        "online": true
+    },
+    {
+        "uid": "bravo-2",
+        "callsign": "BRAVO-TEST",
+        "latitude": 34.47,
+        "longitude": -100.43,
+        "online": false
+    },
+    {
+        "uid": "charlie-3",
+        "callsign": "CHARLIE-3",
+        "latitude": 34.455,
+        "longitude": -100.445,
+        "online": true
+    }
+]
