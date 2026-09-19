@@ -2,23 +2,14 @@ import requests
 
 response = requests.get("https://httpbin.org/get")
 data = response.json()
-headers = data["headers"]
 
-print("Request URL:", data["url"])
-print("Source IP:", data["origin"])
-print("User-Agent:", headers["User-Agent"])
-
+print(data)
 print("Available response keys:", data.keys())
 
 
-print(type(data))
 print(type(data.keys()))
 print(type(data.values()))
 print(type(data.items()))
-
-print("url" in data)
-print("origin" in data)
-print("banana" in data)
 
 if "origin" in data:
     print("The API provided an origin:", data["origin"])
@@ -76,3 +67,28 @@ for device in devices:
     if device ["online"]:
         online_count += 1
 print("Total online devices:", online_count)
+
+print(type(data))
+print(data.keys())
+
+device = {
+    "uid": "alpha-1",
+    "callsign": "ALPHA-1",
+    "online": True
+}
+
+response = requests.post(
+    "https://httpbin.org/post",
+    json=device
+)
+data = response.json()
+
+device_from_api = data["json"]
+
+print(device_from_api)
+print(data["json"]["callsign"])
+
+status = check_device(device_from_api)
+print(status)
+
+

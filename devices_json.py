@@ -1,5 +1,11 @@
 import json
 
+def check_device(device):
+    if device ["online"]:
+        return device["callsign"] + " is online"
+    else:
+        return device["callsign"] + " is offline"
+    
 # Open the JSON file in read mode
 with open("devices.json", "r") as file:
     # Convert the JSON array into a Python list
@@ -10,14 +16,11 @@ online_count = 0
 
 # Loop through each device dictionary in the list.
 for device in devices:
-    if device["uid"] == "bravo-2":
-        device["callsign"] = "BRAVO-TEST"
-    # Check whether this device is online
+    status = check_device(device)
+    print(status)
+
     if device["online"]:
-        # Add 1 to the online count
         online_count += 1
-        # Only print devices whose online status is True
-        print(device["callsign"], "is online")
 
 print("Total online devices:", online_count)
 
